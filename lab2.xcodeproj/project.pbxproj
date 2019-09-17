@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14C7D74023319483000E9537 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7D73F23319483000E9537 /* Animals.swift */; };
 		14F28AB62330A05E000C18EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F28AB52330A05E000C18EB /* AppDelegate.swift */; };
 		14F28AB82330A05E000C18EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F28AB72330A05E000C18EB /* ViewController.swift */; };
 		14F28ABB2330A05E000C18EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F28AB92330A05E000C18EB /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14C7D73F23319483000E9537 /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		14F28AB22330A05E000C18EB /* lab2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F28AB52330A05E000C18EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F28AB72330A05E000C18EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		14F28AA92330A05E000C18EB = {
 			isa = PBXGroup;
 			children = (
+				14C7D73F23319483000E9537 /* Animals.swift */,
 				14F28AB42330A05E000C18EB /* lab2 */,
 				14F28AC92330A05F000C18EB /* lab2Tests */,
 				14F28AD42330A05F000C18EB /* lab2UITests */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F28AF82330A322000C18EB /* DisplayView.swift in Sources */,
+				14C7D74023319483000E9537 /* Animals.swift in Sources */,
 				14F28AB82330A05E000C18EB /* ViewController.swift in Sources */,
 				14F28AB62330A05E000C18EB /* AppDelegate.swift in Sources */,
 			);
