@@ -79,6 +79,7 @@
 		14F28AA92330A05E000C18EB = {
 			isa = PBXGroup;
 			children = (
+				14F28AF72330A322000C18EB /* DisplayView.swift */,
 				14F28AB42330A05E000C18EB /* lab2 */,
 				14F28AC92330A05F000C18EB /* lab2Tests */,
 				14F28AD42330A05F000C18EB /* lab2UITests */,
@@ -103,7 +104,6 @@
 				14F28AB72330A05E000C18EB /* ViewController.swift */,
 				14F28AB92330A05E000C18EB /* Main.storyboard */,
 				14F28ABC2330A05F000C18EB /* Assets.xcassets */,
-				14F28AF72330A322000C18EB /* DisplayView.swift */,
 				14F28ABE2330A05F000C18EB /* LaunchScreen.storyboard */,
 				14F28AC12330A05F000C18EB /* Info.plist */,
 			);
