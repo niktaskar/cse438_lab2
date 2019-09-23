@@ -17,11 +17,11 @@ class ViewController: UIViewController {
 //    var fish:Animals?
     
     // No guard statement
-    var dog:Animals!
-    var cat:Animals!
-    var bird:Animals!
-    var bunny:Animals!
-    var fish:Animals!
+    var dog:Animals = Animals(name: "Dog", color: "Red")
+    var cat:Animals = Animals(name: "Cat", color: "Blue")
+    var bird:Animals = Animals(name: "Bird", color: "Yellow")
+    var bunny:Animals = Animals(name: "Bunny", color: "Green")
+    var fish:Animals = Animals(name: "Fish", color: "Purple")
     
     var animalList:[Animals] = []
     var currentAnimal:Animals!
@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var animalBackground: UIView!
     
     @IBOutlet weak var animalImage: UIImageView!
+    
+    @IBOutlet weak var lastFedLabel: UILabel!
     
     @IBOutlet weak var playButton: UIButton!
     
@@ -56,42 +58,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        dog = Animals(name: "Dog", color: "Red")
-        cat = Animals(name: "Cat", color: "Blue")
-        bird = Animals(name: "Bird", color: "Yellow")
-        bunny = Animals(name: "Bunny", color: "Green")
-        fish = Animals(name: "Fish", color: "Purple")
-        
-//        guard let dog = dog else{
-//            print("dog is not initialized")
-//            exit(-1)
-//        }
-//        animalList.append(dog)
-//        
-//        guard let cat = cat else{
-//            print("cat is not initialized")
-//            exit(-1)
-//        }
-//        animalList.append(cat)
-//        
-//        guard let bird = bird else{
-//            print("bird is not initialized")
-//            exit(-1)
-//        }
-//        animalList.append(bird)
-//        
-//        guard let bunny = bunny else{
-//            print("bunny is not initialized")
-//            exit(-1)
-//        }
-//        animalList.append(bunny)
-//        
-//        guard let fish = fish else{
-//            print("fish is not initialized")
-//            exit(-1)
-//        }
-//        animalList.append(fish)
-        
         // No guard statement
         animalList.append(dog)
         animalList.append(cat)
@@ -102,6 +68,7 @@ class ViewController: UIViewController {
         currentAnimal = dog
         happinessDisplayView.color = UIColor.red
         foodLevelDisplayView.color = UIColor.red
+        lastFedLabel.text = "Last Fed: \(currentAnimal.lastFedString ?? "12:00")"
         updateView()
     }
     
@@ -112,6 +79,8 @@ class ViewController: UIViewController {
         playedLabel.text = "Played: \(currentAnimal.playCount)"
         
         fedLabel.text = "Fed: \(currentAnimal.foodCount)"
+        
+        lastFedLabel.text = "Last Fed: \(currentAnimal.lastFedString!)"
     }
     
     func updateView(animal: Animals){
@@ -148,12 +117,30 @@ class ViewController: UIViewController {
             happinessDisplayView.color = UIColor.purple
             foodLevelDisplayView.color = UIColor.purple
         }
+        lastFedLabel.text = "Last Fed: \(currentAnimal.lastFedString!)"
         
     }
     
     @IBAction func playAction(_ sender: Any) {
-        currentAnimal.play()
-        updateView()
+        let notNeglected = currentAnimal.play()
+//        print(notNeglected)
+        if(!notNeglected){
+            let alert = UIAlertController(title: "Would you like to feed your \(currentAnimal.name!)", message: "It seems like you haven't fed your \(currentAnimal.name!) in 30 seconds and they are low on food. If not, your \(currentAnimal.name!) will be less happy.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(action) in
+                alert.dismiss(animated: true, completion: nil)
+                self.currentAnimal.feed()
+                self.updateView()
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {(action) in
+                alert.dismiss(animated: true, completion: nil)
+                self.currentAnimal.decrementHappiness()
+                self.updateView()
+            }))
+
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            updateView()
+        }
     }
     
     @IBAction func feedAction(_ sender: Any) {
@@ -163,7 +150,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func changeDog(_ sender: Any) {
-        print("DOG")
         if(currentAnimal == dog){
             return
         } else {
@@ -173,7 +159,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeCat(_ sender: Any) {
-        print("CAT")
         if(currentAnimal == cat){
             return
         } else {
@@ -183,7 +168,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeBird(_ sender: Any) {
-        print("BIRD")
         if(currentAnimal == bird){
             return
         } else {
@@ -193,7 +177,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeBunny(_ sender: Any) {
-        print("BUNNY")
         if(currentAnimal == bunny){
             return
         } else {
@@ -203,7 +186,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeFish(_ sender: Any) {
-        print("FISH")
         if(currentAnimal == fish){
             return
         } else {

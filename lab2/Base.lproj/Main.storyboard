@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="529"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bo-3Y-zPf">
-                                        <rect key="frame" x="81" y="200" width="251" height="129"/>
+                                        <rect key="frame" x="80" y="200" width="251" height="129"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="0PA-I0-wwc">
@@ -32,8 +32,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Fed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf2-8E-VCa">
+                                        <rect key="frame" x="323.5" y="20" width="70.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Rf2-8E-VCa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TIC-zV-uDe" secondAttribute="leading" constant="20" id="0n1-17-yzT"/>
+                                    <constraint firstItem="Rf2-8E-VCa" firstAttribute="top" secondItem="TIC-zV-uDe" secondAttribute="top" constant="20" id="pmr-lH-c0e"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rf2-8E-VCa" secondAttribute="trailing" constant="20" id="q4P-5f-27n"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="csw-ge-d23" userLabel="LevelStack">
                                 <rect key="frame" x="10" y="623" width="394" height="194"/>
@@ -215,6 +226,7 @@
                         <outlet property="fishButton" destination="wGc-9e-NAM" id="8y8-wa-t0S"/>
                         <outlet property="foodLevelDisplayView" destination="DlY-pF-3MX" id="4Dp-zX-k4t"/>
                         <outlet property="happinessDisplayView" destination="eC8-mA-W0x" id="qPd-mB-sbF"/>
+                        <outlet property="lastFedLabel" destination="Rf2-8E-VCa" id="EDh-eJ-8ku"/>
                         <outlet property="playButton" destination="D85-kY-73L" id="FgG-bG-5of"/>
                         <outlet property="playedLabel" destination="XHt-Dr-Fmr" id="i6o-Im-ETd"/>
                     </connections>
